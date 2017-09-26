@@ -38,20 +38,31 @@
                 word-break: break-all;
                 white-space: normal;
             }
+            
+            .test li {
+                position: relative;
+                float: left;
+            }
+            
+            .test div {
+                position: relative;
+                float: none;
+            }
+            
+            .multiselect-container li {
+                float: none
+            }
+            
+            .options {
+                float: none;
+            }
         </style>
 
     </head>
 
     <body class="stretched device-lg">
 
-        <select id="example-getting-started" multiple="multiple">
-                    <option value="cheese">Cheese</option>
-                    <option value="tomatoes">Tomatoes---------------------------------------</option>
-                    <option value="mozarella">Mozzarella</option>
-                    <option value="mushrooms">Mushrooms</option>
-                    <option value="pepperoni">Pepperoni</option>
-                    <option value="onions">Onions</option>
-                </select>
+
 
         <!-- Document Wrapper
 	============================================= -->
@@ -2127,12 +2138,27 @@
             <section id="content">
 
                 <div class="content-wrap">
-                    <select name="multicheckbox[]" id="myselect" multiple="multiple">
-                                <option value="BW">Baden-Württemberg<br/> 巴登-符騰堡</option>
-                                <option value="BE">Berlin柏林</option>
-                                <option value="BY">Bavaria (lozengy)巴伐利亞 </option>
-                                <option value="HB">Bremen布萊梅</option>
-                                <option value="BB">Brandenburg布蘭登堡 </option>
+                    <ul id="" class="test clearfix ">
+                        <li>
+                            <div>
+                                <select id="" multiple="multiple">
+                                        <option value="cheese">Cheese</option>
+                                        <option value="tomatoes">Tomatoes<option>
+                                        <option value="mozarella">Mozzarella</option>
+                                        <option value="mushrooms">Mushrooms</option>
+                                        <option value="pepperoni">Pepperoni</option>
+                                        <option value="onions">Onions</option>
+                                    </select>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <select name="" id="" multiple="multiple">
+                                <option value="BW"  >Baden-Württemberg<br/> 巴登-符騰堡</option>
+                                <option value="BE" >Berlin柏林</option>
+                                <option value="BY" >Bavaria (lozengy)巴伐利亞 </option>
+                                <option value="HB" >Bremen布萊梅</option>
+                                <option value="BB" >Brandenburg布蘭登堡 </option>
                                 <option value="HH">Hamburg 漢堡</option>
                                 <option value="HE">Hessen 黑森 </option>
                                 <option value="NI">Lower Saxony 下薩克森 </option>
@@ -2145,11 +2171,14 @@
                                 <option value="NW">North Rhine-Westphalia 北萊茵-西法冷</option>
                                 <option value="MV">Mecklenburg-Western Pomerania 梅克倫堡-西波美恩</option>
                             </select>
+                            </div>
+                        </li>
+                    </ul>
                     <div class="container clearfix">
 
                         <!-- Portfolio Filter
 					============================================= -->
-                        <ul id="portfolio-filter" class="portfolio-filter clearfix ">
+                        <ul id="portfolio-filter" class="portfolio-filter clearfix" style="float:none;position:absolute">
 
                             <!-- <li class="activeFilter"><a href="#" data-filter="*">Show All</a></li>
                             <li><a href="#" data-filter=".pf-dress">Dress</a></li>
