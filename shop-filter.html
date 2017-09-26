@@ -9,7 +9,6 @@
         <!-- Stylesheets
 	============================================= -->
         <link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
-        <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
         <link rel="stylesheet" href="style.css" type="text/css" />
         <link rel="stylesheet" href="css/dark.css" type="text/css" />
         <link rel="stylesheet" href="css/font-icons.css" type="text/css" />
@@ -22,17 +21,41 @@
         <!-- Range Slider CSS -->
         <link rel="stylesheet" href="css/components/ion.rangeslider.css" type="text/css" />
 
+        <link rel="stylesheet" href="css/bootstrap-3.3.2.min.css" type="text/css" />
+        <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap-3.3.2.min.js"></script>
+
+        <script type="text/javascript" src="js/bootstrap-multiselect.js"></script>
+        <link rel="stylesheet" href="css/bootstrap-multiselect.css" type="text/css" />
+
         <!-- Document Title
 	============================================= -->
         <title>Shop | Canvas</title>
+        <style>
+            .multiselect-filter {
+                display: inline-block;
+                max-width: 100%;
+                word-break: break-all;
+                white-space: normal;
+            }
+        </style>
 
     </head>
 
-    <body class="stretched">
+    <body class="stretched device-lg">
+
+        <select id="example-getting-started" multiple="multiple">
+                    <option value="cheese">Cheese</option>
+                    <option value="tomatoes">Tomatoes---------------------------------------</option>
+                    <option value="mozarella">Mozzarella</option>
+                    <option value="mushrooms">Mushrooms</option>
+                    <option value="pepperoni">Pepperoni</option>
+                    <option value="onions">Onions</option>
+                </select>
 
         <!-- Document Wrapper
 	============================================= -->
-        <div id="wrapper" class="clearfix">
+        <div id="wrapper" class="clearfix" style="animation-duration: 1.5s; opacity: 1;">
 
             <!-- Header
 		============================================= -->
@@ -2104,12 +2127,29 @@
             <section id="content">
 
                 <div class="content-wrap">
-
+                    <select name="multicheckbox[]" id="myselect" multiple="multiple">
+                                <option value="BW">Baden-Württemberg<br/> 巴登-符騰堡</option>
+                                <option value="BE">Berlin柏林</option>
+                                <option value="BY">Bavaria (lozengy)巴伐利亞 </option>
+                                <option value="HB">Bremen布萊梅</option>
+                                <option value="BB">Brandenburg布蘭登堡 </option>
+                                <option value="HH">Hamburg 漢堡</option>
+                                <option value="HE">Hessen 黑森 </option>
+                                <option value="NI">Lower Saxony 下薩克森 </option>
+                                <option value="SL">Saarland 薩爾蘭</option>
+                                <option value="SN">Saxony 薩克森</option>
+                                <option value="ST">Saxony-Anhalt 薩克森-安哈特</option>
+                                <option value="TH">Thuringia 圖林根</option>
+                                <option value="RP">Rhineland-Palatinate 萊茵蘭-普法茲</option>
+                                <option value="SH">Schleswig-Holstein 史列斯威-霍爾斯坦</option>
+                                <option value="NW">North Rhine-Westphalia 北萊茵-西法冷</option>
+                                <option value="MV">Mecklenburg-Western Pomerania 梅克倫堡-西波美恩</option>
+                            </select>
                     <div class="container clearfix">
 
                         <!-- Portfolio Filter
 					============================================= -->
-                        <ul id="portfolio-filter" class="portfolio-filter clearfix">
+                        <ul id="portfolio-filter" class="portfolio-filter clearfix ">
 
                             <!-- <li class="activeFilter"><a href="#" data-filter="*">Show All</a></li>
                             <li><a href="#" data-filter=".pf-dress">Dress</a></li>
@@ -2118,7 +2158,7 @@
                             <li><a href="#" data-filter=".pf-watch">Watch</a></li> -->
                             <li>
                                 <select name="" id="">
-                                    <option disabled selected value> -- Language --</option>
+                                    <option disabled selected value> --------------------------- Language --</option>
                                     <option value="german">German</option>                                        
                                     <option value="english">English</option>
                                     <option value="chinese">Chinese</option>
@@ -2127,24 +2167,24 @@
                             </li>
                             <li><span>&nbsp</span></li>
                             <li>
-                                <select name="" id="">
-                                    <option disabled selected value> -- Location --</option>
-                                    <option value="BW">Baden-Württemberg 巴登-符騰堡</option>
-                                    <option value="BY">Bavaria (lozengy)巴伐利亞 </option>
+                                <select name="multicheckbox[]" id="myselect" multiple="multiple" style="display:inline-block;width:90%">
+                                    <!-- <option disabled value> Location </option> -->
+                                    <option value="BW">Baden-Württemberg<br/> 巴登-符騰堡</option>
                                     <option value="BE">Berlin柏林</option>
-                                    <option value="BB">Brandenburg布蘭登堡 </option>
+                                    <option value="BY">Bavaria (lozengy)巴伐利亞 </option>
                                     <option value="HB">Bremen布萊梅</option>
+                                    <option value="BB">Brandenburg布蘭登堡 </option>
                                     <option value="HH">Hamburg 漢堡</option>
                                     <option value="HE">Hessen 黑森 </option>
-                                    <option value="MV">Mecklenburg-Western Pomerania 梅克倫堡-西波美恩</option>
-                                    <option value="NI"> Lower Saxony 下薩克森 </option>
-                                    <option value="NW">North Rhine-Westphalia 北萊茵-西法冷</option>
-                                    <option value="RP">Rhineland-Palatinate 萊茵蘭-普法茲</option>
+                                    <option value="NI">Lower Saxony 下薩克森 </option>
                                     <option value="SL">Saarland 薩爾蘭</option>
                                     <option value="SN">Saxony 薩克森</option>
                                     <option value="ST">Saxony-Anhalt 薩克森-安哈特</option>
-                                    <option value="SH">Schleswig-Holstein 史列斯威-霍爾斯坦</option>
                                     <option value="TH">Thuringia 圖林根</option>
+                                    <option value="RP">Rhineland-Palatinate 萊茵蘭-普法茲</option>
+                                    <option value="SH">Schleswig-Holstein 史列斯威-霍爾斯坦</option>
+                                    <option value="NW">North Rhine-Westphalia 北萊茵-西法冷</option>
+                                    <option value="MV">Mecklenburg-Western Pomerania 梅克倫堡-西波美恩</option>
                                 </select>
                             </li>
 
@@ -2739,17 +2779,17 @@
 
         <!-- External JavaScripts
 	============================================= -->
-        <script type="text/javascript" src="js/jquery.js"></script>
-        <script type="text/javascript" src="js/plugins.js"></script>
+        <!-- <script type="text/javascript" src="js/jquery.js"></script> -->
+        <!-- <script type="text/javascript" src="js/plugins.js"></script> -->
 
         <!-- Range Slider Plugin -->
-        <script type="text/javascript" src="js/components/rangeslider.min.js"></script>
+        <!-- <script type="text/javascript" src="js/components/rangeslider.min.js"></script> -->
 
         <!-- Footer Scripts
 	============================================= -->
-        <script type="text/javascript" src="js/functions.js"></script>
-
-        <script type="text/javascript">
+        <!-- <script type="text/javascript" src="js/functions.js"></script> -->
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/multi-select/0.9.12/js/jquery.multi-select.js"></script>\ -->
+        <!-- <script type="text/javascript">
             var priceRangefrom = 0,
                 priceRangeto = 0,
                 $container = null;
@@ -2817,7 +2857,16 @@
                 });
 
             });
+        </script> -->
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('select[multiple]').multiselect({
+                    // includeSelectAllOption: true,
+                    // enableFiltering: true,
+                })
+            });
         </script>
+
 
     </body>
 
