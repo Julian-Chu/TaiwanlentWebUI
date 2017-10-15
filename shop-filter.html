@@ -56,7 +56,7 @@
                 right: 0;
                 border: 1px solid gray;
                 border-radius: 5px;
-                width: 90px;
+                width: 110px;
             }
             
             .fixedWin p {
@@ -65,7 +65,7 @@
             }
             
             .fixedWin button {
-                width: 80px;
+                width: 100px;
                 margin-left: 5px;
                 margin-right: 5px;
             }
@@ -82,12 +82,83 @@
                 height: 330px;
                 width: 270px;
             }
+            
+            .filter-body-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.6);
+                z-index: 300;
+                pointer-events: none;
+                opacity: 0;
+            }
+
+            .filter-body-overlay-open{
+                opacity: 1;
+                pointer-events: auto;
+            }
+
+
+
+            .detailView{
+                position: relative;
+                margin: 30px auto;   
+                max-width: 30%;   
+                background-color:white;        
+            }
+
+            .detailView-image{
+                margin:auto;
+                max-width: 60%;
+            }
+
+            .center{
+                margin: auto;
+            }
+
+            .closeDetailView{
+                position: absolute;
+                top:2%;
+                left: 77%;
+                min-width: 100%;
+            }
         </style>
 
     </head>
 
     <body class="stretched device-lg">
+        <div class="filter-body-overlay">
+            <div class="product clearfix pf-dress detailView">
+                <div class="closeDetailView"><button class="button button-mini button-circle button-red"><i class="icon-off"></i>Close</button></div>
+                <div class="detailView-image ">
+                    <a href="# "><img src="images/shop/dress/1.jpg " alt="Checked Short Dress "></a>
+                    <!-- <a href="# "><img src="images/shop/dress/1-1.jpg " alt="Checked Short Dress "></a> -->
+                    <div class="sale-flash">Qualified<br/>Experienced</div>
+                    <!-- <div class="product-overlay ">
+                        <a href="# " class="add-to-cart "><i class="icon-bookmark2 "></i><span> 加入詢問清單</span></a>
+                        <a href="include/ajax/shop-item.html " class="item-quick-view " data-lightbox="ajax "><i class="icon-zoom-in2 "></i><span> 查看資料</span></a>
+                    </div> -->
+                </div>
+                <div class="product-desc center">
+                    <div class="product-title ">
+                        <h3><a href="# ">CLAIRE CHANG</a></h3>
+                    </div>
+                    <div class="product-price ">
+                        <div>語言:<span>德語/英語/中文</span></div>
+                        <div>專業背景:<span>化學</span></div>
+                    </div>
+                    <div class="product-rating ">
+                        <button class="button button-3d button-rounded" style='background-color:#7CBAB7'>
+                                    <i class="icon-bookmark2"></i>
+                                    加入詢問清單</button>
+                    </div>
 
+                </div>
+            </div>
+
+        </div>
 
 
         <!-- Document Wrapper
@@ -98,7 +169,7 @@
             <!-- Header
 		============================================= -->
             <header id="header" class="full-header transparent-header border-full-header dark static-sticky sticky-header" data-sticky-class="not-dark" data-sticky-offset="full" data-sticky-offset-negative="100">
-
+                <div class=""></div>
                 <div id="header-wrap">
                     <div class="container clearfix">
                         <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
@@ -183,6 +254,7 @@
                             <li>
                                 <div>
                                     <select id="selectLang" multiple="multiple" holder="test">
+                                        <option value="all">all</option>
                                         <option value="de">德文</option>
                                         <option value="en">英文</option>
                                         <option value="ch">中文</option>
@@ -193,6 +265,7 @@
                             <li>
                                 <select name="multicheckbox[]" id="selectRegion" multiple="multiple" style="display:inline-block;width:90%">
                                     <!-- <option disabled value> Location </option> -->
+                                    <option value="all">all</option>
                                     <option value="BW">Baden-Württemberg<br/> 巴登-符騰堡</option>
                                     <option value="BE">Berlin柏林</option>
                                     <option value="BY">Bavaria (lozengy)巴伐利亞 </option>
@@ -236,8 +309,8 @@
                         </div> -->
                         <div class="fixedWin">
                             <p>0/10</p>
-                            <button class="btn btn-primary">Request</button>
-                            <button class="btn btn-danger">Reset</button>
+                            <button class="button button-mini button-border button-circle button-dark"><i class="icon-ok"></i>批量詢問</button>
+                            <button class="button button-mini button-border button-circle button-dark"><i class="icon-repeat"></i>重置清單</button>
                         </div>
 
                         <div class="clear "></div>
@@ -252,8 +325,8 @@
                                     <!-- <a href="# "><img src="images/shop/dress/1-1.jpg " alt="Checked Short Dress "></a> -->
                                     <div class="sale-flash">Qualified<br/>Experienced</div>
                                     <div class="product-overlay ">
-                                        <a href="# " class="add-to-cart "><i class="icon-shopping-cart "></i><span> Add to List</span></a>
-                                        <a href="include/ajax/shop-item.html " class="item-quick-view " data-lightbox="ajax "><i class="icon-zoom-in2 "></i><span> Detailed View</span></a>
+                                        <a href="# " class="add-to-cart "><i class="icon-bookmark2 "></i><span> 加入詢問清單</span></a>
+                                        <button class="item-quick-view "><i class="icon-zoom-in2 "></i><span> 查看資料</span></button>
                                     </div>
                                 </div>
                                 <div class="product-desc ">
@@ -262,16 +335,12 @@
                                     </div>
                                     <div class="product-price ">
                                         <div>語言:<span>德語/英語/中文</span></div>
-                                        <div>專業:<span>化學</span></div>
+                                        <div>專業背景:<span>化學</span></div>
                                     </div>
                                     <div class="product-rating ">
-                                        <i class="icon-star3 "></i>
-                                        <i class="icon-star3 "></i>
-                                        <i class="icon-star3 "></i>
-                                        <i class="icon-star3 "></i>
-                                        <i class="icon-star-half-full "></i>
-                                        <span>(10)</span>
-                                        <button class="btn btn-success">Add to List</button>
+                                        <button class="button button-3d button-rounded" style='background-color:#7CBAB7'>
+                                            <i class="icon-bookmark2"></i>
+                                            加入詢問清單</button>
                                     </div>
 
                                 </div>
@@ -282,8 +351,8 @@
                                     <a href="# "> <img src="images/team/Taiwanlent-Liu.jpg" alt="Taiwanlent-Liu"></a>
                                     <!-- <a href="# "><img src="images/shop/pants/1.jpg " alt="Slim Fit Chinos "></a> -->
                                     <div class="product-overlay ">
-                                        <a href="# " class="add-to-cart "><i class="icon-shopping-cart "></i><span> Add to List</span></a>
-                                        <a href="include/ajax/shop-item.html " class="item-quick-view " data-lightbox="ajax "><i class="icon-zoom-in2 "></i><span> Details</span></a>
+                                        <a href="# " class="add-to-cart "><i class="icon-bookmark2"></i><span> 加入詢問清單</span></a>
+                                        <a href="include/ajax/shop-item.html " class="item-quick-view " data-lightbox="ajax "><i class="icon-zoom-in2 "></i><span> 查看資料</span></a>
                                     </div>
                                 </div>
                                 <div class="product-desc ">
@@ -295,13 +364,9 @@
                                         <div>學科:<span>化學</span></div>
                                     </div>
                                     <div class="product-rating ">
-                                        <i class="icon-star3 "></i>
-                                        <i class="icon-star3 "></i>
-                                        <i class="icon-star3 "></i>
-                                        <i class="icon-star3 "></i>
-                                        <i class="icon-star-half-full "></i>
-                                        <span>(10)</span>
-                                        <button class="btn btn-success">Add to List</button>
+                                        <button class="button button-3d button-rounded" style='background-color:#7CBAB7'>
+                                                <i class="icon-bookmark2"></i>
+                                                加入詢問清單</button>
                                     </div>
                                 </div>
                             </div>
@@ -324,53 +389,13 @@
                                         <div>學科:<span>化學</span></div>
                                     </div>
                                     <div class="product-rating ">
-                                        <i class="icon-star3 "></i>
-                                        <i class="icon-star3 "></i>
-                                        <i class="icon-star3 "></i>
-                                        <i class="icon-star3 "></i>
-                                        <i class="icon-star-half-full "></i>
-                                        <span>(10)</span>
-                                        <button class="btn btn-success">Add to List</button>
+                                        <button class="button button-3d button-rounded" style='background-color:#7CBAB7'>
+                                                <i class="icon-bookmark2"></i>
+                                                加入詢問清單</button>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- <div class="product clearfix pf-Shoes ">
-                                <div class="product-image ">
-                                    <div class="fslider " data-arrows="false ">
-                                        <div class="flexslider ">
-                                            <div class="slider-wrap ">
-                                                <div class="slide ">
-                                                    <a href="# "><img src="images/shop/shoes/1.jpg " alt="Dark Brown Boots "></a>
-                                                </div>
-                                                <div class="slide ">
-                                                    <a href="# "><img src="images/shop/shoes/1-1.jpg " alt="Dark Brown Boots "></a>
-                                                </div>
-                                                <div class="slide ">
-                                                    <a href="# "><img src="images/shop/shoes/1-2.jpg " alt="Dark Brown Boots "></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-overlay ">
-                                        <a href="# " class="add-to-cart "><i class="icon-shopping-cart "></i><span> Add to Cart</span></a>
-                                        <a href="include/ajax/shop-item.html " class="item-quick-view " data-lightbox="ajax "><i class="icon-zoom-in2 "></i><span> Quick View</span></a>
-                                    </div>
-                                </div>
-                                <div class="product-desc ">
-                                    <div class="product-title ">
-                                        <h3><a href="# ">Dark Brown Boots</a></h3>
-                                    </div>
-                                    <div class="product-price ">$49</div>
-                                    <div class="product-rating ">
-                                        <i class="icon-star3 "></i>
-                                        <i class="icon-star3 "></i>
-                                        <i class="icon-star3 "></i>
-                                        <i class="icon-star-empty "></i>
-                                        <i class="icon-star-empty "></i>
-                                    </div>
-                                </div>
-                            </div> -->
 
                             <div class="product clearfix pf-dress ">
                                 <div class="product-image ">
@@ -390,13 +415,9 @@
                                         <div>學科:<span>化學</span></div>
                                     </div>
                                     <div class="product-rating ">
-                                        <i class="icon-star3 "></i>
-                                        <i class="icon-star3 "></i>
-                                        <i class="icon-star3 "></i>
-                                        <i class="icon-star3 "></i>
-                                        <i class="icon-star-half-full "></i>
-                                        <span>(10)</span>
-                                        <button class="btn btn-success">Add to List</button>
+                                        <button class="button button-3d button-rounded" style='background-color:#7CBAB7'>
+                                                <i class="icon-bookmark2"></i>
+                                                加入詢問清單</button>
                                     </div>
                                 </div>
                             </div>
@@ -420,12 +441,6 @@
                                         <div>學科:<span>化學</span></div>
                                     </div>
                                     <div class="product-rating ">
-                                        <i class="icon-star3 "></i>
-                                        <i class="icon-star3 "></i>
-                                        <i class="icon-star3 "></i>
-                                        <i class="icon-star3 "></i>
-                                        <i class="icon-star-half-full "></i>
-                                        <span>(10)</span>
                                         <button class="btn btn-success">Add to List</button>
                                     </div>
                                 </div>
@@ -449,12 +464,6 @@
                                         <div>學科:<span>化學</span></div>
                                     </div>
                                     <div class="product-rating ">
-                                        <i class="icon-star3 "></i>
-                                        <i class="icon-star3 "></i>
-                                        <i class="icon-star3 "></i>
-                                        <i class="icon-star3 "></i>
-                                        <i class="icon-star-half-full "></i>
-                                        <span>(10)</span>
                                         <button class="btn btn-success">Add to List</button>
                                     </div>
                                 </div>
@@ -478,12 +487,6 @@
                                         <div>學科:<span>化學</span></div>
                                     </div>
                                     <div class="product-rating ">
-                                        <i class="icon-star3 "></i>
-                                        <i class="icon-star3 "></i>
-                                        <i class="icon-star3 "></i>
-                                        <i class="icon-star3 "></i>
-                                        <i class="icon-star-half-full "></i>
-                                        <span>(10)</span>
                                         <button class="btn btn-success">Add to List</button>
                                     </div>
                                 </div>
@@ -508,12 +511,6 @@
                                         <div>學科:<span>化學</span></div>
                                     </div>
                                     <div class="product-rating ">
-                                        <i class="icon-star3 "></i>
-                                        <i class="icon-star3 "></i>
-                                        <i class="icon-star3 "></i>
-                                        <i class="icon-star3 "></i>
-                                        <i class="icon-star-half-full "></i>
-                                        <span>(10)</span>
                                         <button class="btn btn-success">Add to List</button>
                                     </div>
                                 </div>
@@ -692,6 +689,25 @@
                     nonSelectedText: 'Choose Subjects'
                 });
             });
+        </script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                var quickViewButton = $('.item-quick-view').first();
+                console.log(quickViewButton);
+                quickViewButton.click(function(){
+                    console.log('add class');
+                    $('div.filter-body-overlay').addClass('filter-body-overlay-open')
+                })
+
+                var detailcloseButton = $('.closeDetailView>button');
+                console.log(detailcloseButton);
+                detailcloseButton.click(function(){
+                    console.log('test');
+                    $('div.filter-body-overlay').removeClass('filter-body-overlay-open')
+                })
+            }
+
+            )
         </script>
 
 
